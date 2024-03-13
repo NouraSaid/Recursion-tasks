@@ -1,30 +1,19 @@
-// Java implementation to count the occurrence of a digit in  number using Recursion
+// Java implementation to count numbers of digits in  input number using Recursion
  
-import java.util.*;
-  
-class CountDigit{
-     
-    // Function to count the digit K
-    // in the given number N
-    static double countdigits(int n, int k)
-    {
-        if (n == 0)
-            return 0;
-  
-        // Extracting least 
-        // significant digit
-        int digit = n % 10;
-        if (digit == k)
-            return 1 + countdigits(n / 10, k);
-  
-        return countdigits(n / 10, k);
-    }
-  
+public class CountDigit {
+    public static void main(String[] args) {
+        int positiveNumber = 12345; // Replace with your positive number
 
-    public static void main(String[] args)
-    {
-        int n = 1000; //set n
-        int k = 0; //set k
-        System.out.println(countdigits(n, k));
+        int count = digitCount(positiveNumber);
+
+        System.out.println("Numbers of digit in " + positiveNumber + " is: " + count);
     }
-}
+
+    // Count the digit using recursion
+    public static int digitCount(int number) {
+        if (number == 0) {
+            return 0; // If the number is 0, it has 0 digits
+        }
+        return 1 + digitCount(number / 10); 
+    }
+}}
