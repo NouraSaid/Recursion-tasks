@@ -1,11 +1,10 @@
-// Fibonacci series 
+import java.util.ArrayList;
 
-class FibonacciSeries {
+// Fibonacci series 
+public class FibonacciSeries {
 
     // Function to print the fibonacci series
-    static int fib(int n)
-    {
-    
+    static Integer fib(Integer n) {
         if (n <= 1)
             return n;
 
@@ -13,16 +12,21 @@ class FibonacciSeries {
         return fib(n - 1) + fib(n - 2);
     }
 
-    
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         // Given Number N
-        int N =5;
+        Integer N = 5;
+
+        // ArrayList to store the Fibonacci series
+        ArrayList<Integer> fibonacciSeries = new ArrayList<>();
 
         // Print the first N numbers
         for (int i = 0; i <= N; i++) {
+            fibonacciSeries.add(fib(i));
+        }
 
-            System.out.print(fib(i) + " ");
+        // Print the Fibonacci series
+        for (Integer num : fibonacciSeries) {
+            System.out.print(num + " ");
         }
     }
 }
